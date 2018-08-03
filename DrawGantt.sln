@@ -1,0 +1,44 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DrawGantt.Test", "DrawGantt.Test\DrawGantt.Test.csproj", "{23D4EE5D-E05A-448F-B624-690D944EFA53}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DrawGantt.Drawing", "DrawGantt.Drawing\DrawGantt.Drawing.csproj", "{B32759EE-401A-47E4-B9D8-511DC3BE2441}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|Mixed Platforms = Debug|Mixed Platforms
+		Debug|x64 = Debug|x64
+		Release|Any CPU = Release|Any CPU
+		Release|Mixed Platforms = Release|Mixed Platforms
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{23D4EE5D-E05A-448F-B624-690D944EFA53}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{23D4EE5D-E05A-448F-B624-690D944EFA53}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{23D4EE5D-E05A-448F-B624-690D944EFA53}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{23D4EE5D-E05A-448F-B624-690D944EFA53}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{23D4EE5D-E05A-448F-B624-690D944EFA53}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{23D4EE5D-E05A-448F-B624-690D944EFA53}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{23D4EE5D-E05A-448F-B624-690D944EFA53}.Release|Any CPU.Build.0 = Release|Any CPU
+		{23D4EE5D-E05A-448F-B624-690D944EFA53}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{23D4EE5D-E05A-448F-B624-690D944EFA53}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{23D4EE5D-E05A-448F-B624-690D944EFA53}.Release|x64.ActiveCfg = Release|Any CPU
+		{B32759EE-401A-47E4-B9D8-511DC3BE2441}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B32759EE-401A-47E4-B9D8-511DC3BE2441}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B32759EE-401A-47E4-B9D8-511DC3BE2441}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{B32759EE-401A-47E4-B9D8-511DC3BE2441}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{B32759EE-401A-47E4-B9D8-511DC3BE2441}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{B32759EE-401A-47E4-B9D8-511DC3BE2441}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B32759EE-401A-47E4-B9D8-511DC3BE2441}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B32759EE-401A-47E4-B9D8-511DC3BE2441}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{B32759EE-401A-47E4-B9D8-511DC3BE2441}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{B32759EE-401A-47E4-B9D8-511DC3BE2441}.Release|x64.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
