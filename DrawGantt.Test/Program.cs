@@ -65,6 +65,7 @@ namespace DrawGantt.Test
             gantt.SetTopDateTitleSize(16);
             gantt.SetTopDateHeight(30);
             gantt.SetDateType(EnumDateType.Day);
+            gantt.SetLocalCode("en");
             #endregion
 
             gantt.SetData(entries);

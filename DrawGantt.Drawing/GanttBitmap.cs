@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DrawGantt.Drawing.Local;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Drawing2D;
@@ -15,9 +16,9 @@ namespace DrawGantt.Drawing
     public class GanttBitmap
     {
         /// <summary>
-        /// Week to string
+        /// default use cn language
         /// </summary>
-        private Dictionary<DayOfWeek, String> weeks = new Dictionary<DayOfWeek, string>();
+        LocalLanguageBase language=LocalLanguageFactory.CreateInstance("cn");
 
         #region global settings
         /// <summary>
@@ -477,13 +478,6 @@ namespace DrawGantt.Drawing
         /// </summary>
         public GanttBitmap()
         {
-            weeks.Add(DayOfWeek.Monday, "周一");
-            weeks.Add(DayOfWeek.Tuesday, "周二");
-            weeks.Add(DayOfWeek.Wednesday, "周三");
-            weeks.Add(DayOfWeek.Thursday, "周四");
-            weeks.Add(DayOfWeek.Friday, "周五");
-            weeks.Add(DayOfWeek.Saturday, "周六");
-            weeks.Add(DayOfWeek.Sunday, "周日");
         }
         /// <summary>
         /// on dateType,Calculate date column total height
@@ -514,7 +508,7 @@ namespace DrawGantt.Drawing
         {
             if (entryListTree == null || entryListTree.Count == 0)
             {
-                throw new ArgumentNullException("");
+                throw new ArgumentNullException("the entryListTree is null or empty");
             }
             InitStartEndDate();
             this.entryListTree = entryListTree;
@@ -846,6 +840,7 @@ namespace DrawGantt.Drawing
             }
             else
             {
+                yStart = marginTop + mainGridLineWidth;
                 //year of starttime equals year of endtime,no year divider,draw year text
                 label = GetYearString(startTime);
                 sf = graphics.MeasureString(label, topDateTitleFont);
@@ -884,11 +879,11 @@ namespace DrawGantt.Drawing
         }
         private String GetYearString(DateTime datetime)
         {
-            return datetime.Year.ToString();
+            return language.GetDisplayYearString(datetime);
         }
         private String GetMonthString(DateTime datetime)
         {
-            return datetime.Month.ToString() + "月";
+            return language.GetDisplayMonthString(datetime);
         }
 
         /// <summary>
@@ -1331,7 +1326,13 @@ namespace DrawGantt.Drawing
                         frontYStart = frontYEnd;
                         frontXEnd = frontXStart;
                         frontYEnd = frontYStart + (entry.RowID - frontEntry.RowID) * (dataGridHeight + dataGridLineWidth);
+
+                        if (frontXEnd > entry.Rect.Left - relationLineMarginLeft)
+                        {
+                            frontYEnd = frontYEnd - dataGridHeight / 2;
+                        }
                         graphics.DrawLine(relationLinePen, new Point(frontXStart, frontYStart), new Point(frontXEnd, frontYEnd));
+
                     }
 
                     //third line,to the local task rectangle's front,landscape line
@@ -1401,9 +1402,7 @@ namespace DrawGantt.Drawing
         /// </summary>
         private String GetDayString(DateTime dayTime)
         {
-            int day = dayTime.Day;
-            String week = weeks[dayTime.DayOfWeek];
-            return day.ToString() + week;
+            return language.GetDisplayDayString(dayTime);
         }
         /// <summary>
         /// find the starttime and endtime from the gantt's datas
@@ -1908,6 +1907,14 @@ namespace DrawGantt.Drawing
         public void SetDateType(EnumDateType dateType)
         {
             this.dateType = dateType;
+        }
+        /// <summary>
+        /// set the local language,at present only support en and cn
+        /// if the code unsupport,will throw an exception
+        /// </summary>
+        public void SetLocalCode(String localCode)
+        {
+            this.language = LocalLanguageFactory.CreateInstance(localCode);
         }
     }
 }

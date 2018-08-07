@@ -64,6 +64,10 @@
     <Compile Include="EnumDateType.cs" />
     <Compile Include="EnumStatus.cs" />
     <Compile Include="GanttBitmap.cs" />
+    <Compile Include="Local\LocalLanguageBase.cs" />
+    <Compile Include="Local\LocalLanguageCN.cs" />
+    <Compile Include="Local\LocalLanguageEN.cs" />
+    <Compile Include="Local\LocalLanguageFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StartEndPair.cs" />
   </ItemGroup>
